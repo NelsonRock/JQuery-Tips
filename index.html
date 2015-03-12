@@ -26,7 +26,7 @@
 		});
 
 		function updatePanels($context){
-			$("div.panel", $context).each(function(i){
+			$context.find("div.panel").each(function(i){
 				$(this).html("Panel " + i);
 			});
 		}
