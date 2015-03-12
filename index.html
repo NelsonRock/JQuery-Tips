@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using cdn Jquery with fallback </title>
+	<style type="text/css">
+	body{
+		margin:10px;
+	}
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="scripts/jquery.js">
+	window.JQuery || document.write("<script src='scripts/jquery.js'><\script>");
+	</script>
+	<script>
+		var $emailContainer = 
+		$(document).ready(function (){
+			$emailContainer = $("#emailContainer");
+			$emailContainer
+				.attr("title", "Email")
+				.click(function(){
+					alert('Click container');
+				});
+				updatePanels($emailContainer);
+				console.log($emailContainer);
+		});
+
+		function updatePanels($context){
+			$("div.panel", $context).each(function(i){
+				$(this).html("Panel " + i);
+			});
+		}
+	</script>
+</head>
+<body>
+<div id="content">
+	
+</div>
+<div id="emailContainer">
+	<div class="panel">1</div>
+	<div class="panel">13</div>
+</div>
+<div id="oderPanels">
+	<div class="panel"></div>
+	<div class="panel"></div>
+</div>
+</body>
+</html>
