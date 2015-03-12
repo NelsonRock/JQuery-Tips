@@ -16,7 +16,9 @@
 
 	$(document).ready(function(){
 		$("#showPanels").click(function(){
-			
+			$("div:hiddenPanel")
+				.removeClass("hidden")
+				.css({"display":"", "visibility":""});	
 		});
 	});
 	</script>
