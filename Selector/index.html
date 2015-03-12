@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Selector</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+	$.extend($.expr[":"],{
+		hiddenPanel: function(pnl){
+			if(pnl == null) return  false;
+			var $pnl = $(pnl);
+			return $pnl.css("display") == "none" || 
+				   $pnl.css("visibility") == "hidden" || 
+				   $pnl.hasClass("hidden"); 
+		}
+	});
+
+	$(document).ready(function(){
+		$("#showPanels").click(function(){
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	Creating customJquery Selector
+	<button id="showPanels">Show Hidden Panels</button>
+	<div class="panel hidden">
+		Panel 1
+	</div>
+	<div class="panel" style="visibility: hidden;">
+		Panel 2		
+	</div>
+	<div class="panel" style="display: none;">
+		Panel 3
+	</div>
+	<div class="panel">
+		Panel 4
+	</div>
+</body>
+</html>
