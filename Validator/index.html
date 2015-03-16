@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- Font awesome CSS --></head>
 <body>
+<div class="container">
 <div class="contact-form">
 						<h4>Formulario de Contacto</h4>
 						<!-- Form -->
@@ -32,18 +33,30 @@
 							<button type="reset" class="btn btn-white">Borrar</button>
 						</form>
 					</div>
+</div>
 		<!-- jQuery -->
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!--<script src="js/jquery.js"></script>-->
 		<!-- Bootstrap JS -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!--Validator -->
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
 		<script type="text/javascript">
 		$('document').ready(function(){
-			$('form').submit(function(e){
-				e.preventDefault();
-				alert('submit');
+			$('form').validate({
+				rules:{
+					name:{
+						required:true
+					},
+					mail:{
+						required:true
+					},
+					message:{
+						requiered:true
+					}
+				}
 			});
-		})
+		});
 		</script>
 </body>
 </html>
