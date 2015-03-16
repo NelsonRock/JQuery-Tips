@@ -46,10 +46,13 @@
 			$('form').validate({
 				rules:{
 					name:{
-						required:true
+						required:true,
+						minlength:5,
+						maxlength:15
 					},
 					mail:{
-						required:true
+						required:true,
+						email:true
 					},
 					message:{
 						requiered:true
