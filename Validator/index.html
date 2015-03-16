@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title></title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- Font awesome CSS --></head>
+	<style type="text/css">
+
+	</style>
 <body>
 <div class="container">
 <div class="contact-form">
@@ -13,19 +16,27 @@
 						<!-- Form -->
 						<form class="form" role="form">
 							<div class="row">
-								<div class="col-md-6 col-sm-6 col-xs-6">
+								<div>
 									<!-- Form Group -->
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" name="name" placeholder="Su Nombre..">
+										<label for="name" class="col-sm-2">Nombre:</label>
+										<div class="col-sm-10">	
+											<input type="text" class="form-control" id="name" name="name" placeholder="Su Nombre..">
+										</div>
+										<div class="col-sm-3"></div>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-6 col-xs-6">
+								<div>
 									<div class="form-group">
-										<input type="text" class="form-control" id="mail" name="mail" placeholder="ejemplo@gmail.com">
+									<label for="mail" class="col-sm-2">Email:</label>
+										<div class="col-sm-7">
+											<input type="text" class="form-control" id="mail" name="mail" placeholder="ejemplo@gmail.com">
+										</div>
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
+							<label for="message" class="col-sm-2">Mensaje:</label>
 								<textarea class="form-control" rows="7" id="message" name="message" placeholder="Mensaje......"></textarea>
 							</div>
 							<!-- Button -->
@@ -62,6 +73,15 @@
 					message:{
 						requiered:true
 					}
+				},
+				highlight: function (element, errorClass){
+					$(element).closest('.form-group').addClass('has-error');
+				},
+				unhighlight: function(element, errorClass){
+					$(element).closest('.form-group').removeClass('has-error');
+				},
+				errorPlacement: function(error, element){
+					error.appendTo(element.parent().next());
 				}
 			});
 		});
