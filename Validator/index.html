@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<!-- Font awesome CSS --></head>
+<body>
+<div class="contact-form">
+						<h4>Formulario de Contacto</h4>
+						<!-- Form -->
+						<form class="form" role="form">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<!-- Form Group -->
+									<div class="form-group">
+										<input type="text" class="form-control" id="name" name="name" placeholder="Su Nombre..">
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<input type="text" class="form-control" id="mail" name="mail" placeholder="ejemplo@gmail.com">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" rows="7" id="message" name="message" placeholder="Mensaje......"></textarea>
+							</div>
+							<!-- Button -->
+							<button type="submit" id="submit" name="submit" class="btn btn-red">Enviar</button>&nbsp;
+							<button type="reset" class="btn btn-white">Borrar</button>
+						</form>
+					</div>
+		<!-- jQuery -->
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!--<script src="js/jquery.js"></script>-->
+		<!-- Bootstrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		$('document').ready(function(){
+			$('form').submit(function(e){
+				e.preventDefault();
+				alert('submit');
+			});
+		})
+		</script>
+</body>
+</html>
