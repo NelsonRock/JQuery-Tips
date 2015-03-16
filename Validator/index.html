@@ -16,22 +16,23 @@
 						<!-- Form -->
 						<form class="form" role="form">
 							<div class="row">
-								<div>
+								<div class="col-md-12">
 									<!-- Form Group -->
 									<div class="form-group">
 										<label for="name" class="col-sm-2">Nombre:</label>
-										<div class="col-sm-10">	
+										<div class="col-sm-7">	
 											<input type="text" class="form-control" id="name" name="name" placeholder="Su Nombre..">
 										</div>
 										<div class="col-sm-3"></div>
 									</div>
 								</div>
-								<div>
+								<div class="col-md-12">
 									<div class="form-group">
 									<label for="mail" class="col-sm-2">Email:</label>
 										<div class="col-sm-7">
 											<input type="text" class="form-control" id="mail" name="mail" placeholder="ejemplo@gmail.com">
 										</div>
+										<div class="col-sm-3"></div>
 									</div>
 								</div>
 							</div>
@@ -63,8 +64,7 @@
 					name:{
 						required:true,
 						minlength:5,
-						maxlength:15,
-						starWith:true
+						maxlength:15
 					},
 					mail:{
 						required:true,
@@ -74,14 +74,22 @@
 						requiered:true
 					}
 				},
+				messages:{
+					name:{
+						required:"Por favor necesitamos tu nombre..",
+						minlength: "Debe tener 5 caracteres m&iacute;nimo",
+						maxlength: "Tu nombre es muy largo..."
+					},
+					mail:{
+						required:"Necesitamos tu nombre para ponernos en contacto contigo",
+						email:"Ejemplo de email ejemplo@gmail.com"
+					}
+				},
 				highlight: function (element, errorClass){
 					$(element).closest('.form-group').addClass('has-error');
 				},
 				unhighlight: function(element, errorClass){
 					$(element).closest('.form-group').removeClass('has-error');
-				},
-				errorPlacement: function(error, element){
-					error.appendTo(element.parent().next());
 				}
 			});
 		});
